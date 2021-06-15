@@ -60,8 +60,8 @@
 
 
 
- public partial class MainWindow : Window
-    {
+     public partial class MainWindow : Window
+        {
         public MainWindow()
         {
             InitializeComponent();
@@ -105,4 +105,30 @@
             ListProduct.ItemsSource = Result.ToList();
 
         }
-
+        var remove = ListProduct.SelectedItems.Cast<Product>().ToList();
+        
+        
+        
+        <TextBlock TextWrapping="Wrap" Text="{Binding Cost, StringFormat={}{0:N2} Рублей}" Height="25" TextAlignment="Center"/>
+        
+        
+        
+        
+                                <Image Height="100" Margin="10,0">
+                            <Image.Source>
+                                <Binding Path="Description">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>Resources/mask.jpeg</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        
+                        
+                        
+                                                double result;
+                        if (!double.TryParse(tb.Text, out result))
+                        {
+                          //text is not a valid double;
+                          throw new Exception("not a valid number");
+                        }
